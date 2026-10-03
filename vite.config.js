@@ -1,14 +1,10 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// Open Graph / Twitter images must be absolute URLs. Use SITE_URL if set,
-// otherwise the production domain Vercel exposes at build time, otherwise
-// fall back to relative paths (fine for local dev).
-function siteUrl() {
-  if (process.env.SITE_URL) return process.env.SITE_URL.replace(/\/$/, '')
-  if (process.env.VERCEL_PROJECT_PRODUCTION_URL) return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-  return ''
-}
+// Open Graph / Twitter images must be absolute URLs. Override with the SITE_URL
+// env var (e.g. when you add a custom domain).
+const DEFAULT_SITE_URL = 'https://ishika-dumeer.vercel.app'
+const siteUrl = () => (process.env.SITE_URL || DEFAULT_SITE_URL).replace(/\/$/, '')
 
 const injectSiteUrl = () => ({
   name: 'inject-site-url',
