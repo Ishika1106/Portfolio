@@ -302,3 +302,17 @@ main { overflow-x: clip; }
   .service h3 { min-height: 0; }
   .footer__actions .btn { width: 100%; justify-content: center; }
 }
+
+/* mobile fit: headings that wrapped/clipped and footer spacing */
+@media (max-width: 860px) {
+  .hero__title { font-size: clamp(2rem, 9vw, 4.5rem); overflow-wrap: anywhere; }
+  .hero__title mark { display: inline-block; max-width: 100%; }
+  .footer { padding-top: 72px; }
+  .footer__title { font-size: clamp(2rem, 10vw, 4rem); line-height: 1.05; margin-bottom: 32px; overflow-wrap: anywhere; }
+  .footer__bottom { align-items: flex-start; gap: 14px; margin-top: 48px; }
+  .footer__bottom nav { gap: 8px 18px; }
+}
+@media (max-width: 480px) {
+  .hero__title { font-size: clamp(1.6rem, 10vw, 2.8rem); }
+  .footer__title { font-size: clamp(1.9rem, 9.6vw, 2.6rem); }
+}
