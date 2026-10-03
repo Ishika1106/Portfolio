@@ -92,24 +92,6 @@ Requires Node.js 18 or newer.
         └── Reveal.jsx      # Scroll-in animation wrapper
 ```
 
-## Customising
-
-Almost everything lives in [`src/data.js`](src/data.js):
-
-- **Profile and copy:** name, intro, about text, email and social links.
-- **Projects:** add or edit an entry in `projects`. Each one takes a title, blurb, tech stack, screenshot (`public/assets/`), accent colour, and optional `live` and `code` links. A button only shows if its link is set.
-- **Services, achievements and FAQs:** edit the `services`, `experience` and `faqs` arrays.
-
-To change the colours, edit the CSS variables at the top of [`src/styles.css`](src/styles.css).
-
-## Deployment
-
-The site is deployed on **Vercel**, which auto-detects Vite (build command `npm run build`, output directory `dist`). Pushing to the connected branch triggers a new deployment.
-
-**Social preview URL.** Open Graph images need absolute URLs, so `vite.config.js` injects the site address into `index.html` at build time. It defaults to `https://ishika-dumeer.vercel.app`. If you move to a custom domain, set the `SITE_URL` environment variable in your Vercel project settings (for example `https://yourname.dev`) and redeploy.
-
-After changing the preview image, refresh the cached copy with [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/).
-
 ## Contact
 
 Have a project in mind? Use the **Start a project** button on the site, or find me on [LinkedIn](https://www.linkedin.com/in/ishika-dumeer/).
